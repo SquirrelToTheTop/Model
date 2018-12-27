@@ -1,13 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "algorithms.h"
+#include "include/algorithms.h"
+#include "include/functions.h"
 
 int main(){
+	double (*pfunc) (double);
 
-	printf("\nHello =)\n");
+	pfunc = functions_derive;
 
-	printf("\nStarting integration ... \n");
+	algorithms_integrate_euler(10, 0.0, 1.0, 1.0, pfunc);
 
 	return 0;
 }

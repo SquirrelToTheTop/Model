@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS= -O3 -Wall -ffast-math
-LDFALGS=
+LDFLAGS= -lm
 
 EXEC=Model.exec
 SRC=$(wildcard *.c)
@@ -8,7 +8,7 @@ OBJ=$(patsubst %.c, %.o, $(SRC))
 
 $(EXEC): $(OBJ)
 	$(CC) -o $(EXEC) $(OBJ) $(LDFLAGS)
-
+	mv *.o obj/
 %.o:%.c
 	$(CC) $(CFLAGS) -c $^ -o $@ 
 
